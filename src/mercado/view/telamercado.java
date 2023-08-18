@@ -208,6 +208,13 @@ public class telamercado extends javax.swing.JFrame {
         if(jCheckBox1.isSelected()){
             areatexto+=mercado.controller.SintomaController.mostrarSintoma(memoriaRecente);
         }
+        
+        Sintoma alteracaoPersonalidade=new Sintoma("Alteração de personalidade",
+            "Mudanças na personalidade, geralmente na forma de apatia ou desinibição, fazendo parecer outra pessoa.",
+            "Demência Frontotemporal");
+        if(jCheckBox2.isSelected()){
+            areatexto+=mercado.controller.SintomaController.mostrarSintoma(alteracaoPersonalidade);
+        }
         jTextArea1.setText(areatexto);
     }//GEN-LAST:event_jButton1ActionPerformed
 
