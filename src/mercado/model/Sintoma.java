@@ -1,5 +1,8 @@
 package mercado.model;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 public class Sintoma {
     private String sintoma;
     private String descricao;
@@ -35,5 +38,9 @@ public class Sintoma {
         this.transtornos = transtornos;
     }
     
-    
+    public String dados(){
+        String d;
+        d=this.sintoma+"\n"+this.descricao+"\n"+this.transtornos;
+        return d;
+    }
 }
