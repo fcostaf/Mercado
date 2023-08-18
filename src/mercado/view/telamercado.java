@@ -206,14 +206,30 @@ public class telamercado extends javax.swing.JFrame {
             "Dificuldade para armazenar infomrações novas. Costuma repetir as mesmas perguntas e esquecer das notícias atuais.",
             "Doença de Alzheimer, Demência Vascular");
         if(jCheckBox1.isSelected()){
-            areatexto+=mercado.controller.SintomaController.mostrarSintoma(memoriaRecente);
+            String grau="";
+            if(jComboBox1.getSelectedIndex()==0){
+                grau="--Leve--";
+            }else if(jComboBox1.getSelectedIndex()==1){
+                grau="--Moderado--";
+            }else{
+                grau="--Severo--";
+            }
+            areatexto+=mercado.controller.SintomaController.mostrarSintoma(memoriaRecente)+grau+"\n\n";
         }
         
         Sintoma alteracaoPersonalidade=new Sintoma("Alteração de personalidade",
             "Mudanças na personalidade, geralmente na forma de apatia ou desinibição, fazendo parecer outra pessoa.",
             "Demência Frontotemporal");
         if(jCheckBox2.isSelected()){
-            areatexto+=mercado.controller.SintomaController.mostrarSintoma(alteracaoPersonalidade);
+            String grau="";
+            if(jComboBox2.getSelectedIndex()==0){
+                grau="--Leve--";
+            }else if(jComboBox2.getSelectedIndex()==1){
+                grau="--Moderado--";
+            }else{
+                grau="--Severo--";
+            }
+            areatexto+=mercado.controller.SintomaController.mostrarSintoma(alteracaoPersonalidade)+grau+"\n\n";
         }
         jTextArea1.setText(areatexto);
     }//GEN-LAST:event_jButton1ActionPerformed

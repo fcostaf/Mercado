@@ -40,7 +40,7 @@ public class Sintoma {
     
     public String dados(){
         String d;
-        d="***"+this.sintoma+"***"+"\n---------------\n"+this.descricao+"\nTRANSTORNOS ASSOCIADOS\n"+this.transtornos+"\n\n";
+        d="***"+this.sintoma+"***"+"\n---------------\n"+this.descricao+"\nTRANSTORNOS ASSOCIADOS\n"+this.transtornos+"\n";
         return d;
     }
 }
