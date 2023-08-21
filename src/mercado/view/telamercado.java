@@ -6,6 +6,8 @@
 package mercado.view;
 import mercado.controller.SintomaController;
 import mercado.model.Sintoma;
+import java.util.ArrayList;
+import java.util.Collection;
 /**
  *
  * @author 771000343
@@ -190,7 +192,7 @@ public class telamercado extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox1ActionPerformed
@@ -198,40 +200,118 @@ public class telamercado extends javax.swing.JFrame {
     private void jCheckBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBox5ActionPerformed
-
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String areatexto="";
-        
-        Sintoma memoriaRecente=new Sintoma("Memória recente",
-            "Dificuldade para armazenar infomrações novas. Costuma repetir as mesmas perguntas e esquecer das notícias atuais.",
-            "Doença de Alzheimer, Demência Vascular");
+        int sintomas[]=new int[7];
+        String graus[]=new String[7];
         if(jCheckBox1.isSelected()){
-            String grau="";
-            if(jComboBox1.getSelectedIndex()==0){
-                grau="--Leve--";
-            }else if(jComboBox1.getSelectedIndex()==1){
-                grau="--Moderado--";
-            }else{
-                grau="--Severo--";
-            }
-            areatexto+=mercado.controller.SintomaController.mostrarSintoma(memoriaRecente)+grau+"\n\n";
+            sintomas[0]=1;
+        }else{sintomas[0]=0;}
+        if(jCheckBox2.isSelected()){
+            sintomas[1]=1;
+        }else{sintomas[1]=0;}
+        if(jCheckBox3.isSelected()){
+            sintomas[2]=1;
+        }else{sintomas[2]=0;}
+        if(jCheckBox4.isSelected()){
+            sintomas[3]=1;
+        }else{sintomas[3]=0;}
+        if(jCheckBox5.isSelected()){
+            sintomas[4]=1;
+        }else{sintomas[4]=0;}
+        if(jCheckBox6.isSelected()){
+            sintomas[5]=1;
+        }else{sintomas[5]=0;}
+        if(jCheckBox7.isSelected()){
+            sintomas[6]=1;
+        }else{sintomas[6]=0;}
+        
+        switch (jComboBox1.getSelectedIndex()) {
+            case 0:
+                graus[0]="LEVE";
+                break;
+            case 1:
+                graus[0]="MODERADO";
+                break;
+            default:
+                graus[0]="SEVERO";
+                break;
         }
         
-        Sintoma alteracaoPersonalidade=new Sintoma("Alteração de personalidade",
-            "Mudanças na personalidade, geralmente na forma de apatia ou desinibição, fazendo parecer outra pessoa.",
-            "Demência Frontotemporal");
-        if(jCheckBox2.isSelected()){
-            String grau="";
-            if(jComboBox2.getSelectedIndex()==0){
-                grau="--Leve--";
-            }else if(jComboBox2.getSelectedIndex()==1){
-                grau="--Moderado--";
-            }else{
-                grau="--Severo--";
-            }
-            areatexto+=mercado.controller.SintomaController.mostrarSintoma(alteracaoPersonalidade)+grau+"\n\n";
+        switch (jComboBox2.getSelectedIndex()) {
+            case 0:
+                graus[1]="LEVE";
+                break;
+            case 1:
+                graus[1]="MODERADO";
+                break;
+            default:
+                graus[1]="SEVERO";
+                break;
         }
-        jTextArea1.setText(areatexto);
+        
+        switch (jComboBox3.getSelectedIndex()) {
+            case 0:
+                graus[2]="LEVE";
+                break;
+            case 1:
+                graus[2]="MODERADO";
+                break;
+            default:
+                graus[2]="SEVERO";
+                break;
+        }
+        
+        switch (jComboBox4.getSelectedIndex()) {
+            case 0:
+                graus[3]="LEVE";
+                break;
+            case 1:
+                graus[3]="MODERADO";
+                break;
+            default:
+                graus[3]="SEVERO";
+                break;
+        }
+        
+        switch (jComboBox5.getSelectedIndex()) {
+            case 0:
+                graus[4]="LEVE";
+                break;
+            case 1:
+                graus[4]="MODERADO";
+                break;
+            default:
+                graus[4]="SEVERO";
+                break;
+        }
+        
+        switch (jComboBox6.getSelectedIndex()) {
+            case 0:
+                graus[5]="LEVE";
+                break;
+            case 1:
+                graus[5]="MODERADO";
+                break;
+            default:
+                graus[5]="SEVERO";
+                break;
+        }
+        
+        switch (jComboBox7.getSelectedIndex()) {
+            case 0:
+                graus[6]="LEVE";
+                break;
+            case 1:
+                graus[6]="MODERADO";
+                break;
+            default:
+                graus[6]="SEVERO";
+                break;
+        }
+        SintomaController listaSintomas=new SintomaController();
+        String texto=listaSintomas.mostrarSintomas(sintomas, graus);
+        jTextArea1.setText(texto);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

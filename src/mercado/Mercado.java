@@ -1,19 +1,21 @@
 package mercado;
-import java.util.ArrayList;
-import java.util.Collection;
 import javax.swing.JFrame;
 import mercado.model.Sintoma;
 import mercado.view.telamercado;
 public class Mercado {
    
-    public static ArrayList<Sintoma> listaS(){
-        ArrayList<Sintoma> listaSintomas=new ArrayList<>();
+    public static Sintoma[] listaS(){
+        Sintoma listaSintomas[]=new Sintoma[7];
         
         Sintoma memoriaRecente=new Sintoma("Memória recente",
             "Dificuldade para armazenar infomrações novas. Costuma repetir as mesmas perguntas e esquecer das notícias atuais.",
             "Doença de Alzheimer, Demência Vascular");
+        Sintoma alteracaoPersonalidade=new Sintoma("Alteração de personalidade",
+            "Mudanças na personalidade, geralmente na forma de apatia ou desinibição, fazendo parecer outra pessoa.",
+            "Demência Frontotemporal");
 
-        listaSintomas.add(memoriaRecente);
+        listaSintomas[0]=(memoriaRecente);
+        listaSintomas[1]=(alteracaoPersonalidade);
 
         return listaSintomas;
     }

@@ -1,8 +1,5 @@
 package mercado.model;
 
-import java.util.ArrayList;
-import java.util.Collection;
-
 public class Sintoma {
     private String sintoma;
     private String descricao;
