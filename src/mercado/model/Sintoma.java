@@ -1,5 +1,5 @@
 package mercado.model;
-//comentario
+
 public class Sintoma {
     private String sintoma;
     private String descricao;
