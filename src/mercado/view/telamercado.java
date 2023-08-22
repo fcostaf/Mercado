@@ -312,6 +312,10 @@ public class telamercado extends javax.swing.JFrame {
         SintomaController listaSintomas=new SintomaController();
         String texto=listaSintomas.mostrarSintomas(sintomas, graus);
         jTextArea1.setText(texto);
+        
+        String textoGravar=jTextArea1.getText();
+        SintomaController gravaSintomas=new SintomaController();
+        gravaSintomas.gravarSintomas(textoGravar);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

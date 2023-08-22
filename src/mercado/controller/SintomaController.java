@@ -1,5 +1,6 @@
 package mercado.controller;
-
+import java.io.BufferedReader;
+import java.io.FileWriter;
 public class SintomaController {
 
     public SintomaController() {
@@ -21,5 +22,17 @@ public class SintomaController {
         }
         
         return texto;
+    }
+    
+    public void gravarSintomas(String texto){
+        if(texto!=""){
+            try{
+                FileWriter fw=new FileWriter("sintomas.txt");
+                fw.write(texto);
+                fw.close();
+            }catch(Exception e){
+                System.out.println("Tentando gravar vazio");
+            }
+        }
     }
 }
